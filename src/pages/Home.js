@@ -5,8 +5,8 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 
 // Import pages
 import Products from './Products'
-import Orders from './Orders'
-import User from './User'
+import MyOrders from './MyOrders'
+import MyAccount from './MyAccount'
 
 const Tab = createBottomTabNavigator()
 
@@ -21,7 +21,7 @@ export default ({ navigation }) => {
       <Tab.Screen name="Siparişlerim" component={Orders} options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'basket-outline' : 'basket'} size={size} color={color} /> }} />
       <Tab.Screen
         name="Hesabım"
-        component={User}
+        component={MyAccount}
         options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'person-circle-outline' : 'person-circle'} size={size} color={color} /> }}
       />
     </Tab.Navigator>
