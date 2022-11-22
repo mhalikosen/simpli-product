@@ -17,11 +17,7 @@ import Home from './pages/Home'
 
 export default () => {
   // Check for token
-  const { token, setToken } = useContext(AuthContext)
-
-  useEffect(() => {
-    setToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoiMjAyMi0xMS0yMlQxODoyMjoxMS44Mzk2OTM4NTFaIiwidXNlcl9pZCI6OTMxfQ.OVnZB3PEC7TWl4p07jN-26PMFyyfL9xg_F3rSPzOaNE')
-  })
+  const { token } = useContext(AuthContext)
 
   // Initialize Apollo Client and add "Authorization" header
   const httpLink = createHttpLink({
