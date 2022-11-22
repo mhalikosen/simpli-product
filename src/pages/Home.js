@@ -18,9 +18,9 @@ export default ({ navigation }) => {
         component={Products}
         options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'pricetags-outline' : 'pricetags'} size={size} color={color} /> }}
       />
-      <Tab.Screen name="Siparişler" component={Orders} options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'basket-outline' : 'basket'} size={size} color={color} /> }} />
+      <Tab.Screen name="Siparişlerim" component={Orders} options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'basket-outline' : 'basket'} size={size} color={color} /> }} />
       <Tab.Screen
-        name="Kullanıcı"
+        name="Hesabım"
         component={User}
         options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'person-circle-outline' : 'person-circle'} size={size} color={color} /> }}
       />
