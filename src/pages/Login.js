@@ -97,7 +97,7 @@ export default () => {
   // Data handler
   useEffect(() => {
     if (data?.login) {
-      setToken(`Bearer ${data.login}`)
+      setToken(data.login)
     }
   }, [data])
 
@@ -115,7 +115,7 @@ export default () => {
           style={isButtonPressed ? styles.buttonActive : loading ? styles.buttonLoading : styles.button}
           onPress={loginHandler}
         >
-          <Text style={styles.buttonText}>{loading ? <>Giriş yapılıyor...</> : <>Giriş</>}</Text>
+          <Text style={styles.buttonText}>{loading ? 'Giriş yapılıyor...' : 'Giriş'}</Text>
         </Pressable>
       </View>
     </View>

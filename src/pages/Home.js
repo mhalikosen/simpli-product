@@ -1,16 +1,29 @@
-import { useContext } from 'react'
-import { View, Text, Button } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { AuthContext } from '../contexts/AuthContext'
+// Import icon pack
+import Ionicons from '@expo/vector-icons/Ionicons'
 
-const style = { flex: 1, alignItems: 'center', justifyContent: 'center' }
+// Import pages
+import Products from './Products'
+import Orders from './Orders'
+import User from './User'
+
+const Tab = createBottomTabNavigator()
 
 export default ({ navigation }) => {
-  const { setToken } = useContext(AuthContext)
   return (
-    <View style={style}>
-      <Text>Home Screen</Text>
-      <Button title="Logout" onPress={() => setToken('')} />
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Ürünler"
+        component={Products}
+        options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'pricetags-outline' : 'pricetags'} size={size} color={color} /> }}
+      />
+      <Tab.Screen name="Siparişler" component={Orders} options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'basket-outline' : 'basket'} size={size} color={color} /> }} />
+      <Tab.Screen
+        name="Kullanıcı"
+        component={User}
+        options={{ tabBarIcon: ({ focused, color, size }) => <Ionicons name={focused ? 'person-circle-outline' : 'person-circle'} size={size} color={color} /> }}
+      />
+    </Tab.Navigator>
   )
 }
