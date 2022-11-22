@@ -11,11 +11,6 @@ export default (page = 0, limit = 10) => {
     setIndex(index + limit)
   }
 
-  const reset = () => {
-    setProducts([])
-    setIndex(page * limit)
-  }
-
   const GET_PRODUCTS = gql`
     query Products($index: Int, $limit: Int) {
       products(index: $index, limit: $limit) {
@@ -47,5 +42,5 @@ export default (page = 0, limit = 10) => {
     setProducts([...products, ...fetchedProducts])
   }, [data])
 
-  return [products, reset, loading, addMore]
+  return [products, loading, addMore]
 }

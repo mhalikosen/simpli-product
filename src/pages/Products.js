@@ -2,15 +2,12 @@ import { useEffect } from 'react'
 
 import { ActivityIndicator, FlatList, View } from 'react-native'
 
-import Product from '../components/Product'
 import useGetProducts from '../hooks/useGetProducts'
 
-export default ({ navigation }) => {
-  const [products, reset, loading, addMore] = useGetProducts()
+import Product from '../components/Product'
 
-  useEffect(() => {
-    return navigation.addListener('focus', reset)
-  }, [navigation])
+export default ({ navigation }) => {
+  const [products, loading, addMore] = useGetProducts()
 
   return (
     <View>
